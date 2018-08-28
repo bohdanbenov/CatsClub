@@ -1,3 +1,4 @@
+class FavouritesController < ApplicationController
   def index
 
   end
