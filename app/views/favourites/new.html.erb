@@ -1,0 +1,11 @@
+<h1>On this page you can add your picture to favourites</h1>
+
+<%= form_tag("/favourites", method: "post") do %>
+  <%= label_tag(:q, "Image id: ") %>
+  <%= text_field_tag(:q) %>
+  <%= label_tag(:y, "User id: ") %>
+  <%= text_field_tag(:y) %>
+  <%= submit_tag("Add...") %>
+<% end %>
+
+<h2>Result of adding: <%= @resp_crt %></h2>
