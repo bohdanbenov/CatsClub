@@ -1,4 +1,6 @@
 <h1>This page contains all your favourites pictures</h1>
-<% @all_links.each do |product| %>
-  <%= image_tag(product) %>
+<% @all_favorites_links.each do |favourite| %>
+  <%= image_tag("https://www.wpfreeware.com/wp-content/uploads/2014/09/placeholder-images.jpg", class: 'image', image_id: favourite[:image_id], width: "300", height: "300") %>
 <% end %>
+
+<!--favourite[:image_link]-->
