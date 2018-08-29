@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   #  resources :favourites, only: [:index, :new]
   #end
   resources :favourites, only: [:index, :new, :create]
+  resources :images, only: [:show]
 end

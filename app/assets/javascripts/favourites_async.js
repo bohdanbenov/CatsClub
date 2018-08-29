@@ -14,7 +14,7 @@ $(document).ready(
             function(index, elem){
                 console.log($(elem).attr("image_id"))
                 $.ajax({
-                    url: "/",
+                    url: "/images/" + $(elem).attr("image_id"),
                     dataType: "json",
                     method: "GET",
                     success: function(data){
