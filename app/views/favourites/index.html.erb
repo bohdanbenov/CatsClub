@@ -1,1 +1,4 @@
-<h1>Hello from favourites</h1>
+<h1>This page contains all your favourites pictures</h1>
+<% @all_links.each do |product| %>
+  <%= image_tag(product) %>
+<% end %>
