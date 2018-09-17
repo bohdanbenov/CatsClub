@@ -18,9 +18,6 @@ class FavouritesController < ApplicationController
     @all_favorites = JSON.parse(response.body)
 
     @all_favorites.each do |fav|
-      # uri_fav = URI.parse("https://api.thecatapi.com/v1/images/#{fav['image_id']}")
-      # image_link_response = Net::HTTP.get_response(uri_fav)
-      # image_link_hash = JSON.parse(image_link_response.body)
       @all_favorites_links << {fav_image_id: fav['image_id']}
     end
   end

@@ -4,17 +4,9 @@ require 'json'
 
 class ImagesController < ApplicationController
   def show
-    # respond_to do |format|
-    #   format.json do
-    #     render json: {
-    #         url: params['id']
-    #     }
-    #   end
-    # end
     id_image = params['id']
     url = "https://api.thecatapi.com/v1/images/"
     resp = request_to_api(url + id_image)
-    puts 'aaa'
 
 
     respond_to do |format|
