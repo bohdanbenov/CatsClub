@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'faker'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
