@@ -3,11 +3,9 @@ require 'uri'
 require 'json'
 
 class ImagesController < ApplicationController
+  include RequestToApi
   def show
-    id_image = params['id']
-    url = "https://api.thecatapi.com/v1/images/"
-    resp = request_to_api(url + id_image)
-
+    resp = request_to_api('https://api.thecatapi.com/v1/images/' + params['id'])
 
     respond_to do |format|
       format.json do
@@ -16,16 +14,5 @@ class ImagesController < ApplicationController
         }
       end
     end
-  end
-
-  def request_to_api(url)
-    @api_key = '8957a3ef-aa09-404f-a80a-b2fcc16c3267'
-    uri = URI.parse(url)
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    header = {'Content-Type': 'application/json', 'x-api-key': @api_key}
-    req = Net::HTTP::Get.new(uri, header)
-    response = http.request(req)
-    JSON.parse(response.read_body)
   end
 end
