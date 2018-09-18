@@ -1,9 +1,9 @@
 <h1>This is the main page</h1>
 <h3>Pleace make your choise</h3>
 <h3>Near you can chose URL what are you need</h3>
-<a href="http://0.0.0.0:3000/favourites">Page with favourites pictures</a>
+<%= link_to 'Page with favourites pictures', favourites_path %>
 <br>
-<a href="http://0.0.0.0:3000/favourites/new">Page with form for add new favourites picture</a>
+<%= link_to 'Page with form for add new favourites picture', new_favourite_path %>
 <h5>Current time <%=@time%></h5>
 <img src='<%= @url_image %>' alt="picture" class="testimg"/>
 <p>Your image id: <%= @id_image %></p>
