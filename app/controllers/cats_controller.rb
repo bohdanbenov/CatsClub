@@ -3,8 +3,9 @@ require 'uri'
 require 'json'
 
 class CatsController < ApplicationController
+  include GetCurrentTime
   def index
-    @time = Time.now
+    @time = get_time
     url = URI.parse('https://api.thecatapi.com/v1/images/search')
     request = Net::HTTP.get_response(url)
     request["Content-Type"] = 'application/json'
