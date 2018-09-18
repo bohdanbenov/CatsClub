@@ -5,12 +5,12 @@ require 'json'
 class ImagesController < ApplicationController
   include RequestToApi
   def show
-    resp = request_to_api('https://api.thecatapi.com/v1/images/' + params['id'])
+    response = request_to_api('https://api.thecatapi.com/v1/images/' + params['id'], 'get', 0, 0)
 
     respond_to do |format|
       format.json do
         render json: {
-            url: resp['url']
+            url: response['url']
         }
       end
     end
